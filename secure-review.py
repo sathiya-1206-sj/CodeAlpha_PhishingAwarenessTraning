@@ -22,7 +22,7 @@ def login():
     conn = sqlite3.connect("users.db")
     cursor = conn.cursor()
 
-    # ❌ SQL Injection vulnerable code
+    
     query = "SELECT * FROM users WHERE username='" + username + "' AND password='" + password + "'"
     cursor.execute(query)
 
@@ -34,3 +34,4 @@ def login():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=9090, debug=True)
+
